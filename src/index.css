@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #e50914; /* Bold pinkish-red for main accents */
+  --secondary-color: #ff3366; /* Slightly lighter red for highlights or hover states */
+  --background-color: #0a0a0a; /* Deep black background */
+  --text-color: #ffffff; /* White for clean contrast */
+  --accent-color: #1a1a1a; /* Dark grey for secondary background or cards */
+  --border-color: #4d4d4d; /* Mid grey for subtle borders */
+  --highlight-color: #ff0066; /* Bright pink highlight */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+}
+
+.selection_section h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: "Orbitron", sans-serif;
+}
+
+.user_card {
+  background-image: url("../src/assets/one.png");
+  background-position: center;
+  background-size: cover;
+  background-color: var(--accent-color);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  width: 120px;
+  height: 120px;
+  transition: 0.5s;
+}
+
+.user_card_two {
+  background-image: url("../src/assets/two.png");
+  background-position: center;
+  background-size: cover;
+  background-color: var(--accent-color);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  width: 120px;
+  height: 120px;
+  transition: 0.5s;
+}
+
+.user_card_three {
+  background-image: url("../src/assets/three.png");
+  background-position: center;
+  background-size: cover;
+  background-color: var(--accent-color);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  width: 120px;
+  height: 120px;
+  transition: 0.5s;
+}
+
+.user_card:hover {
+  border-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+.user_card_two:hover {
+  border-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+.user_card_three:hover {
+  border-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+.navbar h1 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Orbitron", sans-serif;
+}
+
+.portfolio_btn button {
+  width: 160px;
+  height: 50px;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.portfolio_btn .colored {
+  background-color: var(--primary-color);
+}
