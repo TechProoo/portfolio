@@ -1,3 +1,5 @@
+/* Hero Image Styles */
+
 @import "tailwindcss";
 
 :root {
@@ -21,6 +23,48 @@ body {
   font-size: 2.5rem;
   font-weight: bold;
   font-family: "Orbitron", sans-serif;
+}
+
+.hero_about {
+  background: var(--accent-color);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.25);
+  border: 1.5px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.hero_about h1 {
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+.ft_hd {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+  font-size: 2.1rem;
+  letter-spacing: 2px;
+  font-family: "Orbitron", sans-serif;
+
+  text-shadow: 0 2px 8px rgba(229, 9, 20, 0.15);
+}
+
+.auto-type {
+  animation: fadeIn 1.2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .user_card {
@@ -76,9 +120,20 @@ body {
 
 .navbar h1 {
   color: var(--primary-color);
-  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
+  font-family: "Orbitron", sans-serif;
+}
+
+.hero_text_head span {
+  font-family: "Orbitron", sans-serif;
+  font-weight: bolder;
+}
+
+.hero_text_head h1 {
+  margin-top: -12px;
+  font-weight: bold;
+  color: var(--text-color);
   font-family: "Orbitron", sans-serif;
 }
 
@@ -86,9 +141,134 @@ body {
   width: 160px;
   height: 50px;
   color: var(--text-color);
+  border-radius: 10px;
+  font-weight: 900;
   border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .portfolio_btn .colored {
   background-color: var(--primary-color);
+}
+
+.portfolio_btn button:hover {
+  color: #e50914;
+  border: 1px solid var(--primary-color);
+}
+
+.portfolio_btn .colored:hover {
+  color: white;
+  border: 1px solid var(--primary-color);
+}
+/* Ensure .hero_cover is positioned relative and has a height */
+.hero_cover {
+  position: relative;
+  min-height: 400px;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero_cover:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../src/assets/717645337933573.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: #0a0a0a;
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.hero_about {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  background: var(--accent-color);
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.18);
+  border: 2px solid var(--border-color);
+  display: inline-block;
+}
+
+.hero_about h1 {
+  color: var(--text-color);
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0) 60%,
+    rgba(229, 9, 20, 0.507) 100%
+  );
+  border-radius: 28px;
+  margin-top: -100px;
+  padding: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  min-width: 440px;
+  min-height: 440px;
+  max-width: 580px;
+  max-height: 580px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+.hero_img img,
+.hero_img video {
+  width: 100%;
+  height: 100%;
+  min-width: 240px;
+  min-height: 240px;
+  max-width: 420px;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 22px;
+
+  transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+@media (max-width: 900px) {
+  .hero_img {
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 320px;
+    max-height: 320px;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+  .hero_img img,
+  .hero_img video {
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 340px;
+    max-height: 340px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 60vh;
+  }
+  .hero_img_cover {
+    width: 100%;
+    height: 350px;
+    margin-top: 2rem;
+  }
+  .hero_text_head h1 {
+    font-size: 3rem;
+  }
 }
