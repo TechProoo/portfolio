@@ -125,6 +125,10 @@ body {
   font-family: "Orbitron", sans-serif;
 }
 
+.navbar img {
+  z-index: 2;
+}
+
 .hero_text_head span {
   font-family: "Orbitron", sans-serif;
   font-weight: bolder;
@@ -161,7 +165,7 @@ body {
   color: white;
   border: 1px solid var(--primary-color);
 }
-/* Ensure .hero_cover is positioned relative and has a height */
+
 .hero_cover {
   position: relative;
   min-height: 400px;
@@ -236,6 +240,130 @@ body {
   border-radius: 22px;
 
   transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+hr.gradient_line {
+  height: 3px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(61, 2, 2, 0.705) 60%,
+    rgba(229, 9, 20, 0.507) 100%
+  );
+}
+
+.about {
+  position: relative;
+  height: 580px;
+}
+
+.arrow span {
+  font-weight: bold;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+.about_text h1 {
+  line-height: 45px;
+  font-weight: bolder;
+  padding-left: 20px;
+}
+
+.about_text h1 span {
+  color: var(--primary-color);
+}
+
+.about_text_btm {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+  width: 350px;
+}
+
+.about_text_btm span {
+  color: var(--border-color);
+  font-size: smll;
+}
+
+.about_text_btm button {
+  margin-top: 30px;
+  border: 1px solid var(--border-color);
+  padding: 10px 20px;
+  color: var(--text-color);
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  transition: 0.3s;
+}
+
+.about_text_btm button:hover {
+  color: var(--border-color);
+}
+
+.skill_item_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.skill_section h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: 550;
+  line-height: 1;
+  font-family: "Orbitron", sans-serif;
+}
+
+.skill_section {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.skills_hero,
+.skills_outro {
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.skill_item {
+  height: 150vh;
+}
+
+.skill_item_img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(25% 25%, 75% 40%, 100% 100%, 0 100%);
+}
+
+.skill_item_name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+}
+
+.skill_item_name h1 {
+  color: black;
+  text-shadow: 1.41px 1.41px rgba(255, 0, 0, 1), 2px 0 rgba(255, 0, 0, 1),
+    1.41px -1.41px rgba(255, 0, 0, 1), 0 -2px rgba(255, 0, 0, 1),
+    -1.41px -1.41px rgba(255, 0, 0, 1), -2px 0 rgba(255, 0, 0, 1),
+    -1.41px 1.41px rgba(255, 0, 0, 1), 0 2px rgba(255, 0, 0, 1);
+}
+
+@media (max-width: 1000px) {
+  .skill_section h1,
+  .skill_item_name h1 {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 900px) {
