@@ -2,8 +2,11 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import Tsjs from "../assets/ts-js.png";
-import ReactNext from "../assets/react_next.png";
+import Tsjs from "../assets/js__ts.jpg";
+import ReactNext from "../assets/ne.jpeg";
+import frGs from "../assets/framer_gsap.avif";
+import ex from "../assets/exnod.png";
+import nest from "../assets/nest.png";
 import Lenis from "lenis";
 
 gsap.registerPlugin(useGSAP);
@@ -98,8 +101,37 @@ export const Skills = () => {
         </div>
       </section>
 
+      <section className="skill_section skill_item">
+        <div className="skill_item_img">
+          <img src={frGs} alt="" />
+        </div>
+        <div className="skill_item_name">
+          <h1>GSAP and FramerMotion</h1>
+        </div>
+      </section>
+
+      <section className="skill_section skill_item">
+        <div className="skill_item_img">
+          <img src={ex} alt="" />
+        </div>
+        <div className="skill_item_name">
+          <h1>Express and Nodejs</h1>
+        </div>
+      </section>
+
+      <section className="skill_section skill_item">
+        <div className="skill_item_img">
+          <img src={nest} alt="" />
+        </div>
+        <div className="skill_item_name">
+          <h1>NEST JS</h1>
+        </div>
+      </section>
+
       <section className="skill_section skills_outro">
-        <h1>Back to base</h1>
+        <h1>
+          Imagine it <br /> I will build it
+        </h1>
       </section>
     </div>
   );

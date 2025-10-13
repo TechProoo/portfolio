@@ -10,6 +10,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Skills } from "@/Components/Skills";
+import { Portfolio } from "./Portfolio";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -38,7 +39,7 @@ export const Developer_hero_about = () => {
 
   useGSAP(() => {
     if (imgRef.current) {
-      let tl = gsap.timeline({
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".about",
           start: "top bottom",
@@ -58,7 +59,7 @@ export const Developer_hero_about = () => {
     }
   });
   return (
-    <div>
+    <div className="md:overflow-x-visible overflow-hidden">
       <div className="navbar flex items-center justify-between">
         <div className="trigger_start flex items-center gap-4">
           <img
@@ -110,10 +111,10 @@ export const Developer_hero_about = () => {
       <div className="about">
         <BadgeHeader text="About Me" />
 
-        <div className="about_text flex items-center md:mx-20 md:mt-18 m-10 justify-center ">
+        <div className="about_text flex items-center md:mx-20 md:mt-18 m-1 justify-center ">
           <h1 className="text-4xl">
             {" "}
-            <span className="pl-60"></span>I’m a versatile{" "}
+            <span className="md:pl-60 "></span>I’m a versatile{" "}
             <span>
               full-stack developer who partners with founders to turn complex
               ideas into high-performing digital products.{" "}
@@ -141,6 +142,9 @@ export const Developer_hero_about = () => {
       <div ref={sectionRef} className="skills">
         <BadgeHeader text="My Skill" />
         <Skills />
+      </div>
+      <div ref={sectionRef} className="skills">
+        <Portfolio />
       </div>
     </div>
   );
