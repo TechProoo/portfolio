@@ -652,6 +652,17 @@ hr.gradient_line {
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
+
+/* Utility: hide native scrollbars but keep content scrollable */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
 .modal_message {
   color: var(--text-color);
   margin-bottom: 1rem;

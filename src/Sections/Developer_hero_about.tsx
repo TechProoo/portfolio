@@ -13,7 +13,6 @@ import { Skills } from "@/Components/Skills";
 import { Portfolio } from "./Portfolio";
 import { Achievements } from "./Achievements";
 import { Contact } from "./Contact";
-import SideNav from "@/Components/SideNav";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -60,6 +59,7 @@ export const Developer_hero_about = () => {
       });
     }
   });
+  
   return (
     <div className="md:overflow-x-visible overflow-hidden">
       <div className="navbar flex items-center justify-between">
@@ -140,8 +140,6 @@ export const Developer_hero_about = () => {
         </div>
       </div>
       <Divider />
-
-      <SideNav />
 
       <div id="skills" className="skills">
         <BadgeHeader text="My Skill" />
