@@ -1,0 +1,15 @@
+/* Minimal App styles to satisfy import
+   Theme tokens come from :root in index.css
+*/
+
+.app-root {
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* small utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

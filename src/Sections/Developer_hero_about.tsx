@@ -11,6 +11,9 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Skills } from "@/Components/Skills";
 import { Portfolio } from "./Portfolio";
+import { Achievements } from "./Achievements";
+import { Contact } from "./Contact";
+import SideNav from "@/Components/SideNav";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -35,7 +38,6 @@ export const Developer_hero_about = () => {
   }, []);
 
   const imgRef = useRef<HTMLImageElement | null>(null);
-  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     if (imgRef.current) {
@@ -108,7 +110,7 @@ export const Developer_hero_about = () => {
 
       <Divider />
 
-      <div className="about">
+      <div id="about" className="about">
         <BadgeHeader text="About Me" />
 
         <div className="about_text flex items-center md:mx-20 md:mt-18 m-1 justify-center ">
@@ -139,12 +141,23 @@ export const Developer_hero_about = () => {
       </div>
       <Divider />
 
-      <div ref={sectionRef} className="skills">
+      <SideNav />
+
+      <div id="skills" className="skills">
         <BadgeHeader text="My Skill" />
         <Skills />
       </div>
-      <div ref={sectionRef} className="skills">
+
+      <div id="projects_wrapper" className="skills">
         <Portfolio />
+      </div>
+
+      <div id="achievements" className="skills">
+        <Achievements />
+      </div>
+
+      <div id="contact_wrapper" className="skills">
+        <Contact />
       </div>
     </div>
   );

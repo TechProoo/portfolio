@@ -11,9 +11,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Portfolio: React.FC = () => {
   useGSAP(() => {
+    // Section header animation
+    gsap.fromTo(
+      ".arrow",
+      { y: 20, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".portfolio_section", start: "top 90%" },
+      }
+    );
+
     // animate each project card into view with a subtle stagger
     gsap.utils.toArray(".proj_card").forEach((el, i) => {
-      const node = el as Element;
+      const node = el as HTMLElement;
+
+      // entrance
       gsap.fromTo(
         node,
         { y: 60, opacity: 0, scale: 0.98 },
@@ -23,16 +38,73 @@ export const Portfolio: React.FC = () => {
           scale: 1,
           ease: "power3.out",
           duration: 0.9,
-          delay: i * 0.08,
+          delay: i * 0.06,
           scrollTrigger: {
             trigger: node,
             start: "top 92%",
             end: "top 60%",
             toggleActions: "play none none reverse",
-            // scrub: true, // use scrub if you prefer scroll-tied progress
           },
         }
       );
+
+      // hover tilt effect
+      node.addEventListener("mouseenter", () => {
+        gsap.to(node, {
+          rotationX: 6,
+          rotationY: -6,
+          duration: 0.35,
+          ease: "power2.out",
+        });
+      });
+      node.addEventListener("mouseleave", () => {
+        gsap.to(node, {
+          rotationX: 0,
+          rotationY: 0,
+          duration: 0.45,
+          ease: "power3.out",
+        });
+      });
+
+      // image parallax while scrolling the card into view
+      const img = node.querySelector(".proj_img_wrap img");
+      if (img) {
+        gsap.fromTo(
+          img,
+          { y: -20 },
+          {
+            y: 20,
+            ease: "none",
+            scrollTrigger: {
+              trigger: node,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      }
+
+      // tags reveal (small stagger within card)
+      const tags = node.querySelectorAll(".proj_tag");
+      if (tags.length) {
+        gsap.fromTo(
+          tags,
+          { y: 8, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.06,
+            duration: 0.5,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: node,
+              start: "top 92%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
     });
   });
 
@@ -76,14 +148,14 @@ export const Portfolio: React.FC = () => {
   ];
 
   return (
-    <section className="portfolio_section">
+    <section id="projects" className="portfolio_section">
       <div className="container">
-        <BadgeHeader text="My Work" />
         <Divider />
+        <BadgeHeader text="Selected Work" />
 
         <div className="portfolio_grid">
           {projects.map((p, idx) => (
-            <article className="proj_card" key={idx}>
+            <article className="proj_card" key={idx} tabIndex={0}>
               <div className="proj_img_wrap">
                 <img src={p.img} alt={p.title} />
               </div>
