@@ -12,6 +12,8 @@ const projects = [
     img: posterA,
     tag: "Interaction",
     author: "TECHPRO",
+    url: "https://github.com/TechProoo/framer-gsap",
+    preview: "https://framer-gsap-demo.vercel.app",
   },
   {
     id: "e2",
@@ -19,6 +21,8 @@ const projects = [
     img: posterB,
     tag: "Tools",
     author: "TECHPRO",
+    url: "https://github.com/TechProoo/ts-utils",
+    preview: "https://ts-utils-demo.vercel.app",
   },
   {
     id: "e3",
@@ -26,6 +30,8 @@ const projects = [
     img: posterC,
     tag: "Design",
     author: "TECHPRO",
+    url: "https://github.com/TechProoo/design-system",
+    preview: "https://design-system-demo.vercel.app",
   },
   {
     id: "e4",
@@ -33,6 +39,8 @@ const projects = [
     img: posterA,
     tag: "Data",
     author: "TECHPRO",
+    url: "https://github.com/TechProoo/realtime-dashboard",
+    preview: "https://dashboard-demo.vercel.app",
   },
   {
     id: "e5",
@@ -40,6 +48,8 @@ const projects = [
     img: posterC,
     tag: "Motion",
     author: "TECHPRO",
+    url: "https://github.com/TechProoo/micro-interactions",
+    preview: "https://micro-interactions-demo.vercel.app",
   },
   {
     id: "e6",
@@ -47,6 +57,8 @@ const projects = [
     img: posterB,
     tag: "UI",
     author: "TECHPRO",
+    url: "https://github.com/TechProoo/ui-patterns",
+    preview: "https://ui-patterns-demo.vercel.app",
   },
 ];
 
@@ -54,6 +66,7 @@ const Explore: React.FC = () => {
   const [tagFilter, setTagFilter] = useState<string>("All");
   const [sort, setSort] = useState<string>("Featured");
   const [selected, setSelected] = useState<string | null>(null);
+  const [expanded, setExpanded] = useState<string | null>(null);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   const tags = useMemo(
@@ -82,6 +95,10 @@ const Explore: React.FC = () => {
   }, [selected]);
 
   const selectedProject = projects.find((p) => p.id === selected) || null;
+
+  const toggleExpand = (id: string) => {
+    setExpanded((e) => (e === id ? null : id));
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -190,8 +207,12 @@ const Explore: React.FC = () => {
                   >
                     Preview
                   </button>
-                  <button className="px-3 py-2 border border-white/20 rounded-full text-sm">
-                    Details
+                  <button
+                    onClick={() => toggleExpand(p.id)}
+                    aria-expanded={expanded === p.id}
+                    className="px-3 py-2 border border-white/20 rounded-full text-sm focus:outline-none focus:ring-2"
+                  >
+                    {expanded === p.id ? "Close details" : "Details"}
                   </button>
                 </div>
               </div>
@@ -200,6 +221,74 @@ const Explore: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </article>
           ))}
+          {/** Render inline expanded panel under the corresponding card */}
+          {filtered.map((p) => {
+            if (expanded !== p.id) return null;
+            return (
+              <div
+                key={`exp-${p.id}`}
+                className="col-span-1 sm:col-span-2 lg:col-span-3"
+              >
+                <div className="mt-4 p-6 rounded-2xl bg-gradient-to-br from-[#08121a] to-[#061018] border border-white/6 shadow-lg transition-all">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="w-full md:w-1/3 h-48 object-cover rounded-md"
+                    />
+                    <div className="flex-1">
+                      <h4 className="text-2xl font-bold">{p.title}</h4>
+                      <p className="text-sm text-gray-300 mt-2">
+                        Detailed description: This project demonstrates design
+                        principles, interactions, accessibility and performance
+                        optimizations. It includes code examples, live demos and
+                        implementation notes intended for teams aiming for
+                        award-level quality.
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        <span className="text-xs px-2 py-1 bg-white/6 rounded">
+                          {p.tag}
+                        </span>
+                        <span className="text-xs px-2 py-1 bg-white/6 rounded">
+                          {p.author}
+                        </span>
+                        <span className="text-xs px-2 py-1 bg-white/6 rounded">
+                          Performance
+                        </span>
+                        <span className="text-xs px-2 py-1 bg-white/6 rounded">
+                          Accessibility
+                        </span>
+                      </div>
+                      <div className="mt-4 flex gap-3">
+                        <a
+                          className="px-4 py-2 bg-red-600 rounded-full font-semibold"
+                          href={p.preview}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Live demo
+                        </a>
+                        <a
+                          className="px-4 py-2 border border-white/20 rounded-full"
+                          href={p.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View repo
+                        </a>
+                        <button
+                          className="px-4 py-2 rounded-full"
+                          onClick={() => setExpanded(null)}
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* CTA */}

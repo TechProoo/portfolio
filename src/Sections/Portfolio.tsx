@@ -5,6 +5,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Divider } from "@/Components/Divider";
 import { BadgeHeader } from "@/Components/Badge";
 import placeholder from "../assets/placeholder.svg";
+import Wework from "../assets/wework.png";
+import Certi from "../assets/certi.png";
+import Ecommerce from "../assets/ecommerce.png";
+import Uninav from "../assets/uninav.png";
+import Medmap from "../assets/medmap.png";
+import Helio from "../assets/helio.png";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -110,40 +116,75 @@ export const Portfolio: React.FC = () => {
 
   const projects = [
     {
-      title: "PixVerse Creator",
-      desc: "Short-video AI generator + editor.",
-      img: placeholder,
-      tags: ["React", "AI", "GSAP"],
+      title: "WeWork",
+      desc: "Coding education platform connecting learners with jobs.",
+      img: Wework,
+      url: "https://github.com/TechProoo/wework",
+      preview: "https://weworkk-delta.vercel.app/",
+      tags: [
+        "React",
+        "NestJS",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Authentication",
+        "JWT",
+        "GROQ",
+      ],
     },
     {
-      title: "Realtime Dashboard",
-      desc: "Low-latency charts & WebSocket streams.",
-      img: placeholder,
-      tags: ["Node", "WebSocket", "TS"],
+      title: "CertiAi",
+      desc: "A platform to verify educational certificates instantly with AI",
+      img: Certi,
+      url: "https://github.com/TechProoo/certiAi",
+      preview: "https://certi-ai-sigma.vercel.app",
+      tags: [
+        "Node.js",
+        "TypeScript",
+        "Machine Learning",
+        "OCR",
+        "WebSocket",
+        "Groq",
+      ],
     },
     {
       title: "E-commerce Microservice",
       desc: "Payments, inventory, and product search.",
-      img: placeholder,
-      tags: ["NestJS", "Postgres", "Prisma"],
+      img: Ecommerce,
+      url: "https://github.com/TechProoo/nestjs_ecommerse_backend",
+      preview: "https://github.com/TechProoo/nestjs_ecommerse_backend",
+      tags: ["NestJS", "Postgres", "Prisma", "Microservices", "Stripe", "Groq"],
     },
     {
-      title: "Mobile Commerce App",
-      desc: "Cross-platform React Native app.",
-      img: placeholder,
-      tags: ["React Native", "Expo"],
+      title: "Uninav",
+      desc: "Empowering your academic journey — a centralized resource hub that fosters collaborative learning and provides efficient study tools to help students learn smarter.",
+      img: Uninav,
+      url: "https://github.com/TechProoo/mobile-commerce",
+      preview: "https://uninav.live",
+      tags: [
+        "React",
+        "TypeScript",
+        "Prisma",
+        "Tailwind CSS",
+        "PDF-DIST",
+        "Accessibility",
+        "Performance",
+      ],
     },
     {
-      title: "Design System",
-      desc: "Atomic components & tokens for scale.",
-      img: placeholder,
-      tags: ["Figma", "Tailwind"],
+      title: "Medmap",
+      desc: "Med-Map helps you quickly find nearby pharmacies that have the medications you need.",
+      img: Medmap,
+      url: "https://github.com/TechProoo/medmap_frontend",
+      preview: "https://medmap-frontend.vercel.app/",
+      tags: ["AI", "Groq", "Tailwind CSS", "Storybook", "Accessibility"],
     },
     {
-      title: "Portfolio Landing",
+      title: "HelioPower",
       desc: "Fast, accessible landing with animations.",
-      img: placeholder,
-      tags: ["Vite", "TS", "GSAP"],
+      img: Helio,
+      url: "https://github.com/TechProoo/helio_power",
+      preview: "https://heliopower.vercel.app/",
+      tags: ["Vite", "TypeScript", "GSAP", "Accessibility", "Performance", "scrollreveal", "typed.js"],
     },
   ];
 
@@ -170,8 +211,33 @@ export const Portfolio: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                <div className="proj_cta">
-                  <button className="proj_btn">View</button>
+                <div
+                  className="proj_cta"
+                  style={{ display: "flex", gap: "0.5rem" }}
+                >
+                  <a
+                    href={p.preview}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="proj_btn"
+                    style={{ display: "inline-block", textDecoration: "none" }}
+                  >
+                    View
+                  </a>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="proj_btn"
+                    style={{
+                      display: "inline-block",
+                      textDecoration: "none",
+                      background: "transparent",
+                      border: "1px solid var(--border-color)",
+                    }}
+                  >
+                    Github
+                  </a>
                 </div>
               </div>
             </article>
