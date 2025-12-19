@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Divider } from "@/Components/Divider";
 import { BadgeHeader } from "@/Components/Badge";
-import placeholder from "../assets/placeholder.svg";
 import Wework from "../assets/wework.png";
 import Certi from "../assets/certi.png";
 import Ecommerce from "../assets/ecommerce.png";
