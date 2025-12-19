@@ -24,7 +24,7 @@ export const Skills = () => {
 
     gsap.utils.toArray(".skill_item").forEach((item) => {
       const element = item as Element;
-      const img = element.querySelector(".border skill_item_img border-[#e50914] p-1");
+      const img = element.querySelector(".skill_item_img");
       const nameH1 = element.querySelector(".skill_item_name h1");
 
       const split = SplitText.create(nameH1, { type: "chars", mask: "chars" });
