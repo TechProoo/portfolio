@@ -24,7 +24,7 @@ export const Skills = () => {
 
     gsap.utils.toArray(".skill_item").forEach((item) => {
       const element = item as Element;
-      const img = element.querySelector(".skill_item_img");
+      const img = element.querySelector(".border skill_item_img border-[#e50914] p-1");
       const nameH1 = element.querySelector(".skill_item_name h1");
 
       const split = SplitText.create(nameH1, { type: "chars", mask: "chars" });
@@ -84,7 +84,7 @@ export const Skills = () => {
       </section>
 
       <section className="skill_section skill_item">
-        <div className="skill_item_img">
+        <div className="skill_item_img border border-[#e50914] p-1">
           <img src={Tsjs} alt="" />
         </div>
         <div className="skill_item_name">
@@ -93,7 +93,7 @@ export const Skills = () => {
       </section>
 
       <section className="skill_section skill_item">
-        <div className="skill_item_img">
+        <div className="border skill_item_img border-[#e50914] p-1">
           <img src={ReactNext} alt="" />
         </div>
         <div className="skill_item_name">
@@ -102,7 +102,7 @@ export const Skills = () => {
       </section>
 
       <section className="skill_section skill_item">
-        <div className="skill_item_img">
+        <div className="border skill_item_img border-[#e50914] p-1">
           <img src={frGs} alt="" />
         </div>
         <div className="skill_item_name">
@@ -111,7 +111,7 @@ export const Skills = () => {
       </section>
 
       <section className="skill_section skill_item">
-        <div className="skill_item_img">
+        <div className="border skill_item_img border-[#e50914] p-1">
           <img src={ex} alt="" />
         </div>
         <div className="skill_item_name">
@@ -120,7 +120,7 @@ export const Skills = () => {
       </section>
 
       <section className="skill_section skill_item">
-        <div className="skill_item_img">
+        <div className="border skill_item_img border-[#e50914] p-1">
           <img src={nest} alt="" />
         </div>
         <div className="skill_item_name">

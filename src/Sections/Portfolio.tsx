@@ -193,7 +193,7 @@ export const Portfolio: React.FC = () => {
         <Divider />
         <BadgeHeader text="Selected Work" />
 
-        <div className="portfolio_grid">
+        <div className="portfolio_grid ">
           {projects.map((p, idx) => (
             <article className="proj_card" key={idx} tabIndex={0}>
               <div className="proj_img_wrap">
