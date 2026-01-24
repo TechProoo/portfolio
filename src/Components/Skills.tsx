@@ -7,6 +7,7 @@ import ReactNext from "../assets/ne.jpeg";
 import frGs from "../assets/framer_gsap.avif";
 import ex from "../assets/exnod.png";
 import nest from "../assets/nest.png";
+import pt from "../assets/pt.webp";
 import Lenis from "lenis";
 
 gsap.registerPlugin(useGSAP);
@@ -125,6 +126,14 @@ export const Skills = () => {
         </div>
         <div className="skill_item_name">
           <h1>NEST JS</h1>
+        </div>
+      </section>
+      <section className="skill_section skill_item">
+        <div className="border skill_item_img border-[#e50914] p-1">
+          <img src={pt} alt="" />
+        </div>
+        <div className="skill_item_name">
+          <h1>PYTHON</h1>
         </div>
       </section>
 

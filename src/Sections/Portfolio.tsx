@@ -140,9 +140,9 @@ export const Portfolio: React.FC = () => {
         "Node.js",
         "TypeScript",
         "Machine Learning",
+        "Python",
         "OCR",
         "WebSocket",
-        "Groq",
       ],
     },
     {
