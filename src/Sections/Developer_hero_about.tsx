@@ -59,7 +59,7 @@ export const Developer_hero_about = () => {
       });
     }
   });
-  
+
   return (
     <div className="md:overflow-x-visible overflow-hidden">
       <div className="navbar flex items-center justify-between">
@@ -95,9 +95,13 @@ export const Developer_hero_about = () => {
             </h1>
           </div>
           <div className="portfolio_btn md:gap-5 gap-2 flex mt-5">
-            <button className="colored flex items-center justify-center gap-2 ">
+            <a
+              href="/Olaoluwa_Oyetibo__CV.docx"
+              download
+              className="colored flex items-center justify-center gap-2 wi"
+            >
               <Play /> Resume
-            </button>
+            </a>
             <button>Portfolio</button>
           </div>
         </div>

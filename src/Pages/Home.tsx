@@ -10,7 +10,7 @@ export const Home = () => {
       </div>
 
       <div className="selection_section text-center mt-10">
-        <h1 className="text-5xl flex text-center justify-center items-center gap-3">
+        <h1 className="text-5xl flex text-center justify-center items-center md:gap-3 gap-0">
           Who's Checking <BadgeQuestionMark color="#ffffff" size={40} />
         </h1>
       </div>
@@ -21,7 +21,7 @@ export const Home = () => {
           className="text-center decoration-0 user_card_cover cursor-pointer"
         >
           <div className="user_card rounded-lg  hover:scale-105 hover:border-[#a80218] transition-all duration-300 cursor-pointer"></div>
-          <h2 className="mt-1 text-lg ">Developers</h2>
+          <h2 className="mt-1 text-lg ">Recruiters</h2>
         </Link>
         {/* <Link to={"/recruiters"} className="text-center cursor-pointer">
           <div className="user_card_two transition-all duration-300 cursor-pointer"></div>

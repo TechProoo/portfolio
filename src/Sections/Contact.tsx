@@ -235,12 +235,12 @@ export const Contact: React.FC = () => {
                 <div className="contact_meta">
                   <div>
                     <strong>Email:</strong>{" "}
-                    <a href="mailto:your-email@example.com">
+                    <a href="mailto:olaoluwaoyetibo@example.com">
                       your-email@example.com
                     </a>
                   </div>
                   <div>
-                    <strong>Location:</strong> Remote / London
+                    <strong>Location:</strong> Remote / Ibadan
                   </div>
                 </div>
               </div>

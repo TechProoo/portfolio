@@ -123,16 +123,10 @@ export const Footer: React.FC = () => {
 
         <div className="footer_right">
           <div className="footer_socials">
-            <a href="https://github.com/" target="_blank" rel="noreferrer">
+            <a href="https://github.com/techprooo" target="_blank" rel="noreferrer">
               GitHub
             </a>
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
+
             <a href="https://twitter.com/" target="_blank" rel="noreferrer">
               Twitter
             </a>
