@@ -197,7 +197,6 @@ export const Contact: React.FC = () => {
                 </form>
               </div>
             </div>
-
             <aside className="contact_info">
               <div className="contact_info_card">
                 <h3>Other ways to reach me</h3>

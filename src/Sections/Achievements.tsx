@@ -34,7 +34,7 @@ export const Achievements: React.FC = () => {
         duration: 0.8,
         ease: "power3.out",
         scrollTrigger: { trigger: ".achievements_section", start: "top 92%" },
-      }
+      },
     );
 
     // awards reveal
@@ -55,7 +55,7 @@ export const Achievements: React.FC = () => {
             start: "top 92%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     });
 
@@ -76,7 +76,7 @@ export const Achievements: React.FC = () => {
             start: "top 92%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     });
 
@@ -85,10 +85,10 @@ export const Achievements: React.FC = () => {
       const node = el as HTMLElement;
       gsap.set(node, { scale: 0.95, opacity: 0.9 });
       node.addEventListener("mouseenter", () =>
-        gsap.to(node, { scale: 1.06, duration: 0.25, ease: "power2.out" })
+        gsap.to(node, { scale: 1.06, duration: 0.25, ease: "power2.out" }),
       );
       node.addEventListener("mouseleave", () =>
-        gsap.to(node, { scale: 0.95, duration: 0.35, ease: "power3.out" })
+        gsap.to(node, { scale: 0.95, duration: 0.35, ease: "power3.out" }),
       );
       ScrollTrigger.create({
         trigger: node,
@@ -112,8 +112,8 @@ export const Achievements: React.FC = () => {
     },
     {
       title: "Cloud Certification",
-      meta: "Certified Cloud Practitioner",
-      desc: "AWS foundational cloud engineer certification",
+      meta: "RAG APP BUILDER",
+      desc: "BUILT A RAG APPLOCATION",
     },
     {
       title: "Open Source Contributor",
@@ -124,16 +124,16 @@ export const Achievements: React.FC = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Emmanuel Isoko",
       role: "Product Lead @ Acme",
       quote:
         "Delivered on time and exceeded expectations — high quality and great communication.",
     },
     {
-      name: "Michael Lee",
+      name: "Omotola Ajibade",
       role: "CTO @ DevWorks",
       quote:
-        "Deep technical skill, pragmatic architecture, and very fast iterations.",
+        "Deep technical skill, pragmatic architecture, and most importantly a life saver.",
     },
   ];
 
